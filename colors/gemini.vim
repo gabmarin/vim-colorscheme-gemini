@@ -39,38 +39,55 @@ let s:brown='#62341f'
 let s:brown_t=95
 
 " Helper function
-function s:hi(group, guibg, ctermbg, guifg, ctermfg)
-	exec 'hi ' . a:group . ' guibg=' 	. a:guibg
-	exec 'hi ' . a:group . ' ctermbg=' 	. a:ctermbg
-	exec 'hi ' . a:group . ' guifg=' 	. a:guifg
-	exec 'hi ' . a:group . ' ctermfg=' 	. a:ctermfg
+function s:hi(group, guibg, ctermbg, guifg, ctermfg, gui, term)
+	let l:cmd = 'hi ' . a:group
+	if !empty(a:guibg)
+		let l:cmd .= ' guibg=' . a:guibg
+	endif
+	if !empty(a:ctermbg)
+		let l:cmd .= ' ctermbg=' . a:ctermbg
+	endif
+	if !empty(a:guifg)
+		let l:cmd .= ' guifg=' . a:guifg
+	endif
+	if !empty(a:ctermfg)
+		let l:cmd .= ' ctermfg=' . a:ctermfg
+	endif
+	if !empty(a:gui)
+		let l:cmd .= ' gui=' . a:gui
+	endif
+	if !empty(a:term)
+		let l:cmd .= ' term=' . a:term
+	endif
+	execute l:cmd
 endfunction
 
 " Basic
-call s:hi('Normal', s:black, s:black_t, s:white, s:white_t)
-call s:hi('EndOfBuffer', s:black, s:black_t, s:white, s:white_t)
-call s:hi('SignColumn', s:black, s:black_t, s:white, s:white_t)
-call s:hi('LineNr', s:black, s:black_t, s:white, s:white_t)
-call s:hi('Search', s:brown, s:brown_t, s:white, s:white_t)
-call s:hi('CurSearch', s:dgrey, s:dgrey_t, s:white, s:white_t)
-call s:hi('Pmenu', s:grey, s:grey_t, s:white, s:white_t)
-call s:hi('PmenuSel', s:dgrey, s:dgrey_t, s:white, s:white_t)
-call s:hi('StatusLine', s:white, s:white_t, s:dgrey, s:dgrey_t)
-call s:hi('Cursor', s:dgrey , s:dgrey_t, s:white, s:white_t)
-call s:hi('MatchParen', s:black, s:black_t, s:white, s:white_t)
-call s:hi('WildMenu', s:brown, s:brown_t, s:white, s:white_t)
+call s:hi('Normal', s:black, s:black_t, s:white, s:white_t, '', '')
+call s:hi('EndOfBuffer', s:black, s:black_t, s:white, s:white_t, '', '')
+call s:hi('SignColumn', s:black, s:black_t, s:white, s:white_t, '', '')
+call s:hi('LineNr', s:black, s:black_t, s:white, s:white_t, '', '')
+call s:hi('Search', s:brown, s:brown_t, s:white, s:white_t, '', '')
+call s:hi('CurSearch', s:dgrey, s:dgrey_t, s:white, s:white_t, '', '')
+call s:hi('Pmenu', s:grey, s:grey_t, s:white, s:white_t, '', '')
+call s:hi('Pmenu', s:grey, s:grey_t, s:white, s:white_t, '', '')
+call s:hi('PmenuSel', s:dgrey, s:dgrey_t, s:white, s:white_t, '', '')
+call s:hi('StatusLine', s:white, s:white_t, s:dgrey, s:dgrey_t, '', '')
+call s:hi('Cursor', s:dgrey , s:dgrey_t, s:white, s:white_t, '', '')
+call s:hi('MatchParen', s:black, s:black_t, s:white, s:white_t, '', '')
+call s:hi('WildMenu', s:brown, s:brown_t, s:white, s:white_t, '', '')
 
 " Syntax
-call s:hi('Comment', s:black, s:black_t, s:grey, s:grey_t)
-call s:hi('Constant', s:black, s:black_t, s:orange, s:orange_t)
-call s:hi('Statement', s:black, s:black_t, s:purple, s:purple_t)
-call s:hi('Preproc', s:black, s:black_t, s:blue, s:blue_t)
-call s:hi('Type', s:black, s:black_t, s:purple, s:purple_t)
-call s:hi('Identifier', s:black, s:black_t, s:blue, s:blue_t)
-call s:hi('Function', s:black, s:black_t, s:yellow, s:yellow_t)
-call s:hi('String', s:black, s:black_t, s:green, s:green_t)
-call s:hi('SpecialChar', s:black, s:black_t, s:green, s:green_t)
+call s:hi('Comment', '', '', s:grey, s:grey_t, '', '')
+call s:hi('Constant', '', '', s:orange, s:orange_t, '', '')
+call s:hi('Statement', '', '', s:purple, s:purple_t, '', '')
+call s:hi('Preproc', '', '', s:blue, s:blue_t, '', '')
+call s:hi('Type', '', '', s:purple, s:purple_t, '', '')
+call s:hi('Identifier', '', '', s:blue, s:blue_t, '', '')
+call s:hi('Function', '', '', s:yellow, s:yellow_t, '', '')
+call s:hi('String', '', '', s:green, s:green_t, '', '')
+call s:hi('SpecialChar', '', '', s:green, s:green_t, '', '')
 
 " Special
-call s:hi('Todo', s:black, s:black_t, s:grey, s:grey_t)
+call s:hi('Todo', s:black, s:black_t, s:grey, s:grey_t, '', '')
 " vim:set ft=vim sts=4 sw=4:
