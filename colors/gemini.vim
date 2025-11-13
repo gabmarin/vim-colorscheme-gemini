@@ -29,6 +29,8 @@ let s:blue='#264f78'
 let s:blue_t=24
 let s:orange='#fa903e'
 let s:orange_t=208
+let s:dorange='#ff9632'
+let s:dorange_t=214
 let s:yellow='#fdd663'
 let s:yellow_t=221
 let s:green='#81c995'
@@ -67,15 +69,15 @@ call s:hi('Normal', s:black, s:black_t, s:white, s:white_t, '', '')
 call s:hi('EndOfBuffer', s:black, s:black_t, s:white, s:white_t, '', '')
 call s:hi('SignColumn', s:black, s:black_t, s:white, s:white_t, '', '')
 call s:hi('LineNr', s:black, s:black_t, s:white, s:white_t, '', '')
-call s:hi('Search', s:brown, s:brown_t, s:white, s:white_t, '', '')
-call s:hi('CurSearch', s:dgrey, s:dgrey_t, s:white, s:white_t, '', '')
+call s:hi('Search', s:yellow, s:yellow_t, s:black, s:black_t, '', '')
+call s:hi('CurSearch', s:dorange, s:dorange_t, s:black, s:black_t, '', '')
 call s:hi('Pmenu', s:grey, s:grey_t, s:white, s:white_t, '', '')
 call s:hi('Pmenu', s:grey, s:grey_t, s:white, s:white_t, '', '')
 call s:hi('PmenuSel', s:dgrey, s:dgrey_t, s:white, s:white_t, '', '')
 call s:hi('StatusLine', s:white, s:white_t, s:dgrey, s:dgrey_t, '', '')
 call s:hi('Cursor', s:dgrey , s:dgrey_t, s:white, s:white_t, '', '')
 call s:hi('MatchParen', s:black, s:black_t, s:white, s:white_t, '', '')
-call s:hi('WildMenu', s:brown, s:brown_t, s:white, s:white_t, '', '')
+call s:hi('WildMenu', s:dorange, s:dorange_t, s:black, s:black_t, '', '')
 call s:hi('Visual', s:blue, s:blue_t, 'NONE', 'NONE', '', '')
 
 " Syntax
